@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  background: #dde1e7; /* Cor base essencial para o neumorfismo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 20px;
+}
+
+nav{
+  background: #dde1e7;
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  height: 80px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  border-radius: 10px;
+  /* Efeito Neumorfismo Externo (Sombras suaves) */
+  box-shadow: -3px -3px 7px #ffffffb2,
+               3px 3px 5px rgba(94, 104, 121, 0.3);
+}
+
+nav .logo{
+  font-size: 30px;
+  font-weight: 600;
+  color: #31344b;
+}
+
+nav .nav-items{
+  display: flex;
+  list-style: none;
+}
+
+nav .nav-items li{
+  list-style: none;
+  margin: 0 5px;
+}
+
+nav .nav-items li a{
+  text-decoration: none;
+  color: #31344b;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+/* Efeito de botão "pressionado" no hover (Sombras internas) */
+nav .nav-items li a:hover{
+  box-shadow: inset -2px -2px 5px #ffffffb2,
+              inset 2px 2px 5px rgba(94, 104, 121, 0.3);
+  color: #3498db;
+}
+
+/* Barra de Pesquisa Neumórfica */
+nav form{
+  display: flex;
+  height: 45px;
+  align-items: center;
+  padding: 2px 5px;
+  background: #dde1e7;
+  border-radius: 25px;
+  box-shadow: inset -2px -2px 5px #ffffffb2,
+              inset 2px 2px 5px rgba(94, 104, 121, 0.3);
+}
+
+nav form input{
+  width: 180px;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0 15px;
+  font-size: 16px;
+  color: #31344b;
+}
+
+nav form button{
+  padding: 0 15px;
+  color: #31344b;
+  font-size: 16px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+nav form button:hover {
+  color: #3498db;
+}
+
+/* Escondendo ícones extras no desktop */
+nav .menu-icon, nav .cancel-icon, nav .search-icon{
+  display: none;
+}
+
+/* Responsividade Básica */
+@media (max-width: 990px) {
+  nav{
+    padding: 0 20px;
+  }
+  nav .nav-items{
+    display: none; 
+  }
+  nav form {
+    display: none; /* Oculta o formulário no mobile para não esmagar o layout */
+  }
+  nav .menu-icon {
+    display: block;
+    font-size: 22px;
+    color: #31344b;
+    cursor: pointer;
+  }
+}
